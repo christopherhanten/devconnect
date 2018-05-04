@@ -7,7 +7,7 @@ const keys     = require('../../config/keys')
 const passport = require('passport');
 
 //load User model
-const User = require('../models/User');
+const User     = require('../models/User');
 
 // @route  GET api/users/test
 // @desc   Tests users route
