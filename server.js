@@ -5,24 +5,24 @@ const bodyParser = require('body-parser');
 const passport   = require('passport');
 
 //point to route files
-const users   = require('./routes/api/users');
-const profile = require('./routes/api/profile');
-const posts   = require('./routes/api/posts');
+const users      = require('./routes/api/users');
+const profile    = require('./routes/api/profile');
+const posts      = require('./routes/api/posts');
 
 //initialize app
-const app = express();
+const app    = express();
 
 //body parser middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 //db config
-const db = require('./config/keys').mongoURI;
+const db     = require('./config/keys').mongoURI;
 
 //connect to mongodb
 mongoose
   .connect(db)
-  .then(() => console.log('MongoDb Connected'))
+  .then(()   => console.log('MongoDb Connected'))
   .catch(err => console.log(err));
 
 //passport middleware
@@ -37,7 +37,7 @@ app.use('/api/profile', profile);
 app.use('/api/posts', posts);
 
 //set port (mlab || local)
-const port = process.env.PORT || 5000;
+const port   = process.env.PORT || 5000;
 
 //listen on port
 app.listen(port, () => console.log('Server running on port ${port}'));
