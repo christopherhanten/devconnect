@@ -1,8 +1,8 @@
 //requirements
 const express    = require ('express');
 const mongoose   = require ('mongoose');
-const bodyParser = require('body-parser');
-const passport   = require('passport');
+const bodyParser = require ('body-parser');
+const passport   = require ('passport');
 
 //point to route files
 const users      = require('./routes/api/users');
